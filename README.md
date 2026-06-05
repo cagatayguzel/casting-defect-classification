@@ -15,17 +15,17 @@ The final results showed that ResNet18 outperformed the baseline CNN and was sel
 
 The experiments were conducted using a public Kaggle casting product dataset with two classes:
 
-- `def_front` → defective
-- `ok_front` → non-defective
+- `def_front` → defective  
+- `ok_front` → non-defective  
 
-The dataset was used for supervised image classification.
+The dataset is accessed directly from Kaggle within the notebook environment.
 
 ---
 
 ## Models
 
 ### 1. Simple CNN
-A baseline convolutional neural network trained from scratch.
+A baseline convolutional neural network.
 
 ### 2. ResNet18
 A transfer learning-based model initialized with pretrained ImageNet weights and adapted for binary casting defect classification.
@@ -36,66 +36,60 @@ A transfer learning-based model initialized with pretrained ImageNet weights and
 
 The project was developed and tested in **Kaggle Notebook** using **PyTorch**.
 
+To properly run the code and access the dataset, it is recommended to execute the notebook directly in Kaggle.
+
+📌 Kaggle Notebook Link: *(https://www.kaggle.com/code/cagatayguzel/cnn-inspection)*
+
 ---
 
 ## Repository Contents
 
-- `cnn-inspection.ipynb` → main notebook containing preprocessing, training, evaluation, Grad-CAM, and demo sections
-- `README.md` → project description and usage instructions
-
-If additional figures or output images are included, they can be placed in a separate folder such as `figures/`.
+- `cnn-inspection.ipynb` → main notebook containing preprocessing, model loading, evaluation, Grad-CAM, and demo sections  
+- `README.md` → project description and usage instructions  
 
 ---
 
 ## How to Run
 
-1. Open the notebook in Kaggle or Jupyter.
-2. Add the casting dataset to the notebook environment.
-3. Run the cells for:
-   - preprocessing
-   - model training or model loading
-   - evaluation
-   - Grad-CAM visualization
-   - single-image inference demo
+1. Open the notebook in Kaggle using the link above.
+2. Run all cells in order.
+
+The notebook is configured to **skip training** and **automatically load pretrained model weights**, allowing direct evaluation and inference without retraining.
 
 ---
 
 ## Saved Model Weights
 
-The trained model weights are not stored directly in this repository because of GitHub file size limitations for browser uploads.
+Due to GitHub file size limitations, trained model weights are not stored in this repository.
 
-The project was developed in Kaggle Notebook, and the notebook includes the necessary code to:
-- define the models
-- load saved weights
-- run inference on new images
-
-For demonstration purposes, the ResNet18 model was used as the final model.
+Instead, the notebook is designed to load pretrained weights directly from the Kaggle environment.
 
 ---
 
 ## Inference and Demo
 
-The notebook includes demo cells for:
+The notebook includes demo sections for:
 
-- single-image prediction
-- class probability visualization
-- Grad-CAM heatmap generation
+- single-image prediction  
+- class probability visualization  
+- Grad-CAM heatmap generation  
 
-These cells can be used to test the trained model on casting images and to visualize the image regions that contribute most to the prediction.
+These can be used to test the trained model and visualize the regions that contribute most to the prediction.
 
 ---
 
 ## Results Summary
 
-The baseline Simple CNN successfully learned the casting defect classification task and provided strong performance.
+Both models successfully learned the casting defect classification task.
 
-The ResNet18 model achieved the best overall performance and clearly improved the results compared with the baseline CNN.
+The ResNet18 model achieved the best overall performance and showed clear improvements over the baseline CNN.
 
-In addition to quantitative evaluation, Grad-CAM was used as an explainability tool to visualize the image regions influencing the model’s predictions.
+Grad-CAM was used as an explainability tool to visualize the image regions influencing the model’s predictions.
 
 ---
 
 ## Notes
 
-This repository focuses on sharing the notebook and project structure.  
-The main training and inference workflow was executed in the Kaggle environment.
+- The notebook is configured for **inference-only execution** (training is disabled).
+- All experiments and model execution are intended to run within the Kaggle environment.
+- Running the notebook locally may require manual dataset and weight configuration.
